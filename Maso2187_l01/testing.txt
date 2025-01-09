@@ -1,0 +1,46 @@
+/**
+ * -------------------------------------
+ * @file  testing.txt
+ * Lab 1 Test Results File
+ * -------------------------------------
+ * @author Roan Mason, 169072187, Maso2187@mylaurier.ca
+ *
+ * @version 2025-01-05
+ *
+ * -------------------------------------
+ */
+Results:
+
+./Maso2187_l01
+Program Parameters:
+
+  No user parameters specified.
+
+  Argument 0 is a system default, and is always passed to the main program.
+  Argument 0 is the path and name of the executable file.
+
+  argc: 1
+  argv[0] = "./Maso2187_l01"
+
+
+./Maso2187_l01 A 1 "some strings"
+Program Parameters:
+
+  argc: 4
+
+  argv[0] = "./Maso2187_l01"
+  argv[1] = "A"
+  argv[2] = "1"
+  argv[3] = "some strings"
+
+
+./Maso2187_l01 B 2 some strings
+Program Parameters:
+
+  argc: 5
+
+  argv[0] = "./Maso2187_l01"
+  argv[1] = "B"
+  argv[2] = "2"
+  argv[3] = "some"
+  argv[4] = "strings"
