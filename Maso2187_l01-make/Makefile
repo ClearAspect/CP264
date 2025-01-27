@@ -1,6 +1,26 @@
+# ----------------------------------------
+# Makefile for CP264 Lab 01
+# Author: [Your Name]
+# Student Number: [Your Student Number]
+# 
+# Usage:
+#   make        - builds the program
+#   make clean  - removes build files
+#   make run    - builds and runs the program
+#   make debug  - builds with debug symbols
+#   make lldb   - starts LLDB debugger
+# ----------------------------------------
+# Directory Structure:
+#   src/     - source files
+#   include/ - header files
+#   bin/     - output executables
+#   build/   - object files
+# ----------------------------------------
+
 # Compiler and flags
 CC = gcc
 CFLAGS = -I./include
+DEBUGFLAGS = -g
 
 # Directories
 SRCDIR = src
@@ -9,6 +29,14 @@ BUILDDIR = build
 
 # Target executable
 TARGET = $(BINDIR)/Maso2187_l01
+
+# ----------------------------------------
+# Build Configuration:
+# - Uses gcc compiler
+# - Automatically finds all .c files in src/
+# - Creates corresponding .o files in build/
+# - Links into final executable in bin/
+# ----------------------------------------
 
 # Source and object files
 # SOURCES = $(SRCDIR)/main.c $(SRCDIR)/parameters.c
@@ -42,5 +70,21 @@ clean:
 	rm -rf $(BUILDDIR)
 	rm -rf $(BINDIR)
 	@echo "Cleaned!"
+	
+# Run the program
+run: $(TARGET)
+	@echo "Running program..."
+	@./$(TARGET)
 
-.PHONY: all clean
+# Debug build
+debug: CFLAGS += $(DEBUGFLAGS)
+debug: clean
+	@$(MAKE) all
+	@echo "Built with debug information"
+
+# Start debugger (using LLDB for macOS)
+lldb: debug
+	@echo "Starting LLDB debugger..."
+	@lldb $(TARGET)
+
+.PHONY: all clean run debug lldb
