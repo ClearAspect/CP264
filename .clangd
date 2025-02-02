@@ -1,4 +1,0 @@
-CompileFlags:
-  Add: [-std=c99]
-  Add: [-Wall]
-  # Add: [-Werror]
