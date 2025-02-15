@@ -1,10 +1,13 @@
+#include "polynomial.h"
 
 float horner(float *p, int n, float x) {
 
-	float result = 0.0f;
+	// Start with the last coefficient (largest power)
+	float result = *p;
 
-	for (int i = 0; i < n; i++) {
-		result = result * x + (*(p + i));
+	for (int i = 1; i < n; ++i) { // Start with the next highest power
+		result = result * x + p[i];
+		// result = result * x + *(p + i);
 	}
 
 	return result;
