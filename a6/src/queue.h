@@ -1,6 +1,10 @@
 #include "common.h"
 
+#ifndef QUEUE_H
+#define QUEUE_H
+
 /*
+ *
  * Define a structure QUEUE containing length and pointers of front and rare
  * node. int length - maintains the length of queue, NODE *front - pointer to
  * the front node of linked list queue NODE *rear - points to the rare node of
@@ -31,3 +35,5 @@ NODE *dequeue(QUEUE *qp);
  * @param *qp - pointer to the queue
  */
 void clean_queue(QUEUE *qp);
+
+#endif
