@@ -1,4 +1,4 @@
-IndentWidth: 2
-TabWidth: 2
+IndentWidth: 4
+TabWidth: 4
 UseTab: Always
 AllowShortFunctionsOnASingleLine: Empty
